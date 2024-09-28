@@ -248,7 +248,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>1.6k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -269,7 +269,7 @@
       
           <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>陣列的大小往往都是固定的，如果你需要一個可以增減的陣列，你可能會想到<code>std::vector</code>。然而，既然官方的函式庫裡面有這樣的東西，就表示我們可以做一個出來。</p>
 <h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><p>核心概念：倍增法</p>
-<p>當空間不足時，新增一倍的空間。也可以當作是空間$\times 2$。</p>
+<p>當空間不足時，新增一倍的空間。也可以當作是空間\(\times 2\)。</p>
 <h3 id="P1-Vector"><a href="#P1-Vector" class="headerlink" title="P1 Vector"></a>P1 Vector</h3><h4 id="Vector-h"><a href="#Vector-h" class="headerlink" title="Vector.h"></a>Vector.h</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Vector</span> &#123;</span><br><span class="line">    <span class="built_in">Vector</span>(<span class="type">int</span> _sz = <span class="number">0</span>) : <span class="built_in">sz</span>(_sz), <span class="built_in">capacity</span>(_sz) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sz != <span class="number">0</span>) value = <span class="keyword">new</span> <span class="type">int</span>[sz];</span><br><span class="line">        <span class="keyword">else</span> value = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Vector</span>() &#123;</span><br><span class="line">        <span class="keyword">if</span> (value != <span class="literal">nullptr</span>) <span class="keyword">delete</span> [] value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">Vector&amp; <span class="title">resize</span><span class="params">(<span class="type">int</span> new_size)</span></span>;</span><br><span class="line">    <span class="function">Vector&amp; <span class="title">push_back</span><span class="params">(<span class="type">int</span> val)</span></span>;</span><br><span class="line">    <span class="function">Vector&amp; <span class="title">pop_back</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="type">int</span>&amp; <span class="keyword">operator</span>[](<span class="type">int</span> index) &#123; <span class="keyword">return</span> value[index];&#125;</span><br><span class="line">    <span class="type">int</span> *value;</span><br><span class="line">    <span class="type">int</span> sz, capacity;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>請完成<code>Vector.cpp</code>的實作。</p>
