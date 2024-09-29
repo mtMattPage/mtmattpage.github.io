@@ -206,6 +206,156 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/misc/offline-judge-system/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/misc/offline-judge-system/" class="post-title-link" itemprop="url">Offline Judge 離線程式評測系統</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2022-06-05 08:00:00" itemprop="dateCreated datePublished" datetime="2022-06-05T08:00:00+08:00">2022-06-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/misc/" itemprop="url" rel="index"><span itemprop="name">misc</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>8.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>15 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近我同學有在架設我們學校的線上評測系統，而一開始我們的系統非常不穩定，因此，他想到可以寫離線的程式答題系統緩解我們上課的需求。而我看到這個系統，我覺得這是一個不錯的想法，並依此加以改良，新增 TLE 判定和超時時會強制停止，並且可以跨平台使用。</p>
+<h2 id="使用-解題者"><a href="#使用-解題者" class="headerlink" title="使用(解題者)"></a>使用(解題者)</h2><p>一題會是一個資料夾，裡面會有隱藏檔案和非隱藏檔案。</p>
+<table>
+<thead>
+<tr>
+<th>檔案名稱</th>
+<th>大致內容</th>
+<th>是否隱藏</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AC</td>
+<td>ascii art 的 AC 字樣</td>
+<td>True</td>
+</tr>
+<tr>
+<td>WA</td>
+<td>ascii art 的 WA 字樣</td>
+<td>True</td>
+</tr>
+<tr>
+<td>TLE</td>
+<td>ascii art 的 TLE 字樣</td>
+<td>True</td>
+</tr>
+<tr>
+<td>main.h</td>
+<td>主要程式</td>
+<td>原則上 True</td>
+</tr>
+<tr>
+<td>Run.cpp</td>
+<td>執行程式</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Solve.h</td>
+<td>使用者的程式</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>題目敘述</td>
+<td>False</td>
+</tr>
+<tr>
+<td>README.txt</td>
+<td>說明使用方法(如下)</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<h3 id="README-txt-內文"><a href="#README-txt-內文" class="headerlink" title="README.txt 內文"></a>README.txt 內文</h3><h4 id="以下說明檔案功能及用法"><a href="#以下說明檔案功能及用法" class="headerlink" title="以下說明檔案功能及用法"></a>以下說明檔案功能及用法</h4><ol>
+<li>編譯並執行 Run.cpp 可以獲得評測結果</li>
+<li>程式碼請寫在 Solve.h 裡面</li>
+<li>題目敘述在 Description 裡面，一般應該是 .txt，.md 或 .pdf</li>
+<li>標準輸入輸出用 cin 和 cout 就可以了</li>
+</ol>
+<h4 id="以下說明答題結果"><a href="#以下說明答題結果" class="headerlink" title="以下說明答題結果"></a>以下說明答題結果</h4><ol>
+<li>AC 作答正確</li>
+<li>WA 輸出結果錯誤，或不符合題目要求</li>
+<li>TLE 執行時間過長</li>
+<li>程式跳掉 一般來說都是 RE(runtime error)</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/misc/offline-judge-system/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/leetcode-1-two-sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -790,100 +940,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/atcoder-abc-215-a-your-first-judge/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ojques/atcoder-abc-215-a-your-first-judge/" class="post-title-link" itemprop="url">AtCoder ABC 215 A</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-12-11 08:00:00" itemprop="dateCreated datePublished" datetime="2021-12-11T08:00:00+08:00">2021-12-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>525</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：AtCoder-Beginner-Contest-215-A-Your-First-Judge"><a href="#題目連結：AtCoder-Beginner-Contest-215-A-Your-First-Judge" class="headerlink" title="題目連結：AtCoder Beginner Contest 215: A - Your First Judge"></a>題目連結：<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc215/tasks/abc215_a" title="題目連結">AtCoder Beginner Contest 215: A - Your First Judge</a></h3><h4 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h4><p>給定一個字串 S，輸出 AC 若 S&#x3D;&#x3D;”Hello,World!” 否則輸出 WA。</p>
-<h4 id="輸入說明"><a href="#輸入說明" class="headerlink" title="輸入說明"></a>輸入說明</h4><p>輸⼊一行字串</p>
-<h4 id="範例輸入-1"><a href="#範例輸入-1" class="headerlink" title="範例輸入 1"></a>範例輸入 1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
-
-<h4 id="範例輸出-1"><a href="#範例輸出-1" class="headerlink" title="範例輸出 1"></a>範例輸出 1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AC</span><br></pre></td></tr></table></figure>
-
-<h4 id="範例輸入-2"><a href="#範例輸入-2" class="headerlink" title="範例輸入 2"></a>範例輸入 2</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ojques/atcoder-abc-215-a-your-first-judge/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/atcoder-abc-215-b-log2n/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1076,7 +1132,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/2021-nhspc-2-bgp/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/atcoder-abc-215-a-your-first-judge/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1090,7 +1146,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/2021-nhspc-2-bgp/" class="post-title-link" itemprop="url">2021 全國學科能力競賽模擬賽 2.BGP</a>
+            <a href="/ojques/atcoder-abc-215-a-your-first-judge/" class="post-title-link" itemprop="url">AtCoder ABC 215 A</a>
         </h2>
 
         <div class="post-meta">
@@ -1100,7 +1156,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-12-04 08:00:00" itemprop="dateCreated datePublished" datetime="2021-12-04T08:00:00+08:00">2021-12-04</time>
+              <time title="創建時間：2021-12-11 08:00:00" itemprop="dateCreated datePublished" datetime="2021-12-11T08:00:00+08:00">2021-12-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1118,14 +1174,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>3.5k</span>
+              <span>525</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>6 分鐘</span>
+              <span>1 分鐘</span>
             </span>
 
         </div>
@@ -1137,15 +1193,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我發現，全國能力競賽的難度似乎與我預期的有落差，這一題也是我唯一一個完全解開的題目。真的好難！</p>
-<h4 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h4><p>「BGP 劫持（BGP Hijacking）」是⼀種透過「邊界閘道器協定（Border Gateway Protocol,BGP）」 的性質進⾏攻擊的⼿段。簡單來說，每個伺服器會宣稱⾃⼰擁有⼀段 IP，並將這個訊息傳遞給周遭的伺服器，來更新他們的路由表。周遭的伺服器也會將這個更新繼續往外傳遞，使伺服器知道要如何將封包傳遞到指定的IP。而 BGP 劫持這個攻擊⼿法，就是透過錯誤地宣稱⾃⼰擁有某⼀段 IP，或者是⾃⼰通往擁有該 IP 的伺服器路徑更短，來使得其他路由器將 IP 往他傳遞。並透過 BGP 更新路由表的特性進⾏⼤規模的流量轉移，使得使⽤者無法存取特定的服務，或者是拿到封包之後拆解其中的內容以獲得敏感資訊。</p>
-<p>現在，全國資訊安全能⼒競賽模擬賽要進⾏⼀場 BGP 劫持的攻防⼤賽。這場⽐賽⼀共有 N ⽀隊伍參加，每⽀隊伍會維護⼀台伺服器，之後主辦⽅每次會把⼀個封包丟給⼀個伺服器，並指定他要傳向哪個伺服器。接著每台伺服器會根據他的路由表，選擇⼀個伺服器傳遞封包，而參賽者要做的就是盡可能讓不相關的封包經過⾃⼰，從而破解其中的資訊，而封包的傳遞⽅和接收⽅則要負責保護傳遞的路徑不要被攻擊。作為全國資安第⼀把交椅，翔哥也有關注全國資訊安全能⼒競賽模擬賽，但是翔哥真的太強了，這種⽐賽的勝敗他並不放在⼼上，他關⼼的是有沒有可能⼤家都享受到⽐賽的過程。雖然傳遞的路徑會根據路由表以及接收者而異，可是這對翔哥來說是 a piece of cake。他已經預測出了 M 個封包潛在被劫持的⽅式。根據封包傳遞的性質，這些路徑必定不會讓封包在數個隊伍之間循環傳遞。</p>
-<p>現在，翔哥想知道是否存在⼀種 BGP 劫持的狀況，使得封包會經過每⽀隊伍恰好⼀次。</p>
-<h4 id="輸入說明"><a href="#輸入說明" class="headerlink" title="輸入說明"></a>輸入說明</h4><p>輸⼊的第⼀⾏包含兩個⾮負整數 N 、M ，代表全國資訊安全能⼒競賽模擬賽⼀共有 N 個隊伍參加，且 有 M 個可能的封包劫持狀況。 接下來的 M ⾏，每⾏包含兩個正整數 si、ti，代表第 si 個隊伍拿到的封包有可能被第 ti 個隊伍劫持。 保證不存在⼀種劫持路徑使得⼀個封包可以在數個隊伍之間循環傳遞。</p>
-<h4 id="輸出說明"><a href="#輸出說明" class="headerlink" title="輸出說明"></a>輸出說明</h4><p>如果存在⼀種劫持封包的⽅式，使得每個隊伍會接⼿那個封包恰好⼀次，請輸出 N 個正整數於⼀⾏，代表封包可以依序經過哪些隊伍的伺服器，否則請輸出 −1。如果有很多種封包傳遞路徑都滿⾜條件，輸出任意⼀個都可以獲得 Accepted。</p>
+          <h3 id="題目連結：AtCoder-Beginner-Contest-215-A-Your-First-Judge"><a href="#題目連結：AtCoder-Beginner-Contest-215-A-Your-First-Judge" class="headerlink" title="題目連結：AtCoder Beginner Contest 215: A - Your First Judge"></a>題目連結：<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc215/tasks/abc215_a" title="題目連結">AtCoder Beginner Contest 215: A - Your First Judge</a></h3><h4 id="題目敘述"><a href="#題目敘述" class="headerlink" title="題目敘述"></a>題目敘述</h4><p>給定一個字串 S，輸出 AC 若 S&#x3D;&#x3D;”Hello,World!” 否則輸出 WA。</p>
+<h4 id="輸入說明"><a href="#輸入說明" class="headerlink" title="輸入說明"></a>輸入說明</h4><p>輸⼊一行字串</p>
+<h4 id="範例輸入-1"><a href="#範例輸入-1" class="headerlink" title="範例輸入 1"></a>範例輸入 1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<h4 id="範例輸出-1"><a href="#範例輸出-1" class="headerlink" title="範例輸出 1"></a>範例輸出 1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AC</span><br></pre></td></tr></table></figure>
+
+<h4 id="範例輸入-2"><a href="#範例輸入-2" class="headerlink" title="範例輸入 2"></a>範例輸入 2</h4>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/2021-nhspc-2-bgp/#more" rel="contents">
+              <a class="btn" href="/ojques/atcoder-abc-215-a-your-first-judge/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -1168,7 +1225,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -1234,7 +1291,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1284,13 +1341,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">166k</span>
+    <span title="總字數">173k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">5:01</span>
+    <span title="所需總閱讀時間">5:14</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
