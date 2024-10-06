@@ -206,6 +206,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/dataStructure/stack-and-queue-part-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/dataStructure/stack-and-queue-part-2/" class="post-title-link" itemprop="url">Stack and Queue (Part 2)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-10-06 08:00:00" itemprop="dateCreated datePublished" datetime="2024-10-06T08:00:00+08:00">2024-10-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dataStructure/" itemprop="url" rel="index"><span itemprop="name">dataStructure</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>9 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>有了動態陣列之後，堆疊與佇列就可以被實作出來了。堆疊的基本概念是先進去的後出來，就像疊好的盤子。佇列則相反，先進去的會先出來，就像一群在排隊的人。</p>
+<h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><p>接著我們來實作佇列，你會發現，這次我們要利用resize。如果佇列沒有內容物而要求輸出<code>front()</code>，請輸出-1。如果佇列內沒有任何元素，請跳過指令。因為想要有效的利用空間，所以我們會使用環形陣列的方式儲存資料。</p>
+<h3 id="Template-for-your-program"><a href="#Template-for-your-program" class="headerlink" title="Template for your program"></a>Template for your program</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// push back, pop front, and get front</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="comment">// [l, r)</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">    <span class="built_in">Queue</span>(): <span class="built_in">sz</span>(<span class="number">0</span>), <span class="built_in">l</span>(<span class="number">0</span>), <span class="built_in">r</span>(<span class="number">0</span>), <span class="built_in">capacity</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; values;</span><br><span class="line">    <span class="type">int</span> l, r, sz, capacity;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">set_capacity</span><span class="params">(<span class="type">int</span> new_capacity)</span></span>;</span><br><span class="line">    <span class="function">Queue&amp; <span class="title">push</span><span class="params">(<span class="type">int</span> val)</span></span>;</span><br><span class="line">    <span class="function">Queue&amp; <span class="title">pop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">front</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> sz; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Queue::set_capacity</span><span class="params">(<span class="type">int</span> new_capacity)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Your code below</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Your code above</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Queue&amp; <span class="title">Queue::push</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Your code below</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Your code above</span></span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Queue&amp; <span class="title">Queue::pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Your code below</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Your code above</span></span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Queue::front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Your code below</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Your code above</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> PUSH&#123;<span class="number">1</span>&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> POP&#123;<span class="number">2</span>&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> FRONT&#123;<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);std::cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> operation_num;</span><br><span class="line">    std::cin &gt;&gt; operation_num;</span><br><span class="line"></span><br><span class="line">    Queue st;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i&#123;<span class="number">0</span>&#125;; i &lt; operation_num; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> op, value;</span><br><span class="line">        std::cin &gt;&gt; op;</span><br><span class="line">        <span class="keyword">switch</span> (op) &#123;</span><br><span class="line">        <span class="keyword">case</span> PUSH:</span><br><span class="line">            std::cin &gt;&gt; value;</span><br><span class="line">            st.<span class="built_in">push</span>(value);</span><br><span class="line">            std::cout &lt;&lt; st.<span class="built_in">size</span>() &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> POP:</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> FRONT:</span><br><span class="line">            std::cout &lt;&lt; st.<span class="built_in">front</span>() &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Usage-of-Queue"><a href="#Usage-of-Queue" class="headerlink" title="Usage of Queue"></a>Usage of Queue</h2><h3 id="BFS-CSES"><a href="#BFS-CSES" class="headerlink" title="BFS(CSES)"></a>BFS(<a target="_blank" rel="noopener" href="https://cses.fi/problemset/task/1193/">CSES</a>)</h3><p>你有一個迷宮的地圖，任務是找到從起點到終點的路徑。你可以向左、向右、向上、或向下移動。</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/dataStructure/stack-and-queue-part-2/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/dataStructure/stack-and-queue-part-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1122,98 +1215,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/leetcode-2-add-two-numbers/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ojques/leetcode-2-add-two-numbers/" class="post-title-link" itemprop="url">LeetCode 2. Add Two Numbers</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-06-05 08:00:00" itemprop="dateCreated datePublished" datetime="2022-06-05T08:00:00+08:00">2022-06-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：Add-Two-Numbers-LeetCode"><a href="#題目連結：Add-Two-Numbers-LeetCode" class="headerlink" title="題目連結：Add Two Numbers - LeetCode"></a>題目連結：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/add-two-numbers/">Add Two Numbers - LeetCode</a></h3><h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>我的作法可能沒有那麼好，我是用 vector 存數字，接著進行運算，最後再轉成 link-list。</p>
-<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span><br><span class="line"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span><br><span class="line"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; n1,n2;</span><br><span class="line">        n1.<span class="built_in">emplace_back</span>(l1-&gt;val);</span><br><span class="line">        <span class="keyword">while</span>(l1-&gt;next!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            l1=l1-&gt;next;</span><br><span class="line">            n1.<span class="built_in">emplace_back</span>(l1-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        n2.<span class="built_in">emplace_back</span>(l2-&gt;val);</span><br><span class="line">        <span class="keyword">while</span>(l2-&gt;next!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            l2=l2-&gt;next;</span><br><span class="line">            n2.<span class="built_in">emplace_back</span>(l2-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(max(n1.size(),n2.size())+<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n1.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            ans[i]+=n1[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n2.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            ans[i]+=n2[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">max</span>(n1.<span class="built_in">size</span>(),n2.<span class="built_in">size</span>());++i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(ans[i]&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">                ans[i+<span class="number">1</span>]++;</span><br><span class="line">                ans[i]-=<span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(ans.<span class="built_in">back</span>()==<span class="number">0</span>)&#123;</span><br><span class="line">            ans.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ListNode *ret=<span class="keyword">new</span> <span class="built_in">ListNode</span>(ans[<span class="number">0</span>]),*a=ret,*b=<span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;ans.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">            b=<span class="keyword">new</span> <span class="built_in">ListNode</span>(ans[i]);</span><br><span class="line">            a-&gt;next=b;</span><br><span class="line">            a=b;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ojques/leetcode-2-add-two-numbers/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1283,7 +1284,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">91</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1333,13 +1334,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">173k</span>
+    <span title="總字數">178k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">5:14</span>
+    <span title="所需總閱讀時間">5:24</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
