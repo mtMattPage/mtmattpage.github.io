@@ -206,6 +206,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/cpp-basic-a271/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ojques/cpp-basic-a271/" class="post-title-link" itemprop="url">C++ 基礎題 a271: 彩色蘿蔔</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-02 08:00:00" itemprop="dateCreated datePublished" datetime="2021-02-02T08:00:00+08:00">2021-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>4 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：a271-彩色蘿蔔-高中生程式解題系統"><a href="#題目連結：a271-彩色蘿蔔-高中生程式解題系統" class="headerlink" title="題目連結：a271. 彩色蘿蔔 - 高中生程式解題系統"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a271">a271. 彩色蘿蔔 - 高中生程式解題系統</a></h3><p>輸入與輸出的優化，程式碼如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> dataNum=<span class="number">0</span>;</span><br><span class="line">    stringstream stream;</span><br><span class="line"></span><br><span class="line">    string s;</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    <span class="type">int</span> poison=<span class="number">0</span>;</span><br><span class="line">    <span class="type">bool</span> isLife=<span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    cin&gt;&gt;dataNum;</span><br><span class="line">    s=<span class="string">&quot;\n&quot;</span>;<span class="built_in">getline</span>(cin,s);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;dataNum;i++)&#123;</span><br><span class="line">        isLife=<span class="literal">true</span>;</span><br><span class="line">        <span class="type">int</span> x,y,z,w,n,m;</span><br><span class="line"></span><br><span class="line">        s=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">getline</span>(cin,s);</span><br><span class="line"></span><br><span class="line">        stream.<span class="built_in">clear</span>();</span><br><span class="line">        stream.<span class="built_in">str</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        stream&lt;&lt;s;</span><br><span class="line">        stream&gt;&gt;x&gt;&gt;y&gt;&gt;z&gt;&gt;w&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        s=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">getline</span>(cin,s);</span><br><span class="line">        <span class="keyword">if</span>(s!=<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">            poison=<span class="number">0</span>;</span><br><span class="line">            temp=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            stream.<span class="built_in">clear</span>();</span><br><span class="line">            stream&lt;&lt;s;</span><br><span class="line">            <span class="keyword">while</span>(stream&gt;&gt;temp)&#123;</span><br><span class="line">                m-=poison*n;</span><br><span class="line">                <span class="keyword">if</span>(m&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">                    isLife=<span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(temp==<span class="number">1</span>)&#123;</span><br><span class="line">                    m+=x;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(temp==<span class="number">2</span>)&#123;</span><br><span class="line">                    m+=y;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(temp==<span class="number">3</span>)&#123;</span><br><span class="line">                    m-=z;</span><br><span class="line">                    <span class="keyword">if</span>(m&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">                        isLife=<span class="literal">false</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(temp==<span class="number">4</span>)&#123;</span><br><span class="line">                    m-=w;</span><br><span class="line">                    <span class="keyword">if</span>(m&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">                        isLife=<span class="literal">false</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    poison+=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(isLife)&#123;</span><br><span class="line">                cout&lt;&lt;m&lt;&lt;<span class="string">&quot;g&quot;</span>&lt;&lt;endl;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                cout&lt;&lt;<span class="string">&quot;bye~Rabbit&quot;</span>&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            cout&lt;&lt;m&lt;&lt;<span class="string">&quot;g\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ojques/cpp-basic-a271/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/cpp-basic-a001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -451,7 +541,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-count">93</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -501,13 +591,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">178k</span>
+    <span title="總字數">184k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">5:24</span>
+    <span title="所需總閱讀時間">5:35</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
