@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,16 +14,13 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mtmatt.page","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="源起 &amp; 說明起心動念編纂這本「講義」的時候，正值我準備 APCS 考試期間，當時也正在就讀高中，考量到時間上的不足，我邀請 3 個人一起參與，所以，作者總共有 4 個人，而本篇貼文所摘錄的是我所創作的部分。 作者序演算法與資料結構一直以來都是程式設計中最重要的部分。然而許多的書籍在介紹時，出於篇幅考量，字句精簡，以致晦澀難懂。本書旨在對於演算法及資料結構進行詳細的介紹，避免初學者遇到與我">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mtmatt.page","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="源起 &amp; 說明起心動念編纂這本「講義」的時候，正值我準備 APCS 考試期間，當時也正在就讀高中，考量到時間上的不足，我邀請 3 個人一起參與，所以，作者總共有 4 個人，而本篇貼文所摘錄的是我所創作的部分。 作者序演算法與資料結構一直以來都是程式設計中最重要的部分。然而許多的書籍在介紹時，出於篇幅考量，字句精簡，以致晦澀難懂。本書旨在對於演算法及資料結構進行詳細的介紹，避免初學者遇到與我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="APCS 講義">
 <meta property="og:url" content="http://mtmatt.page/apcs/apcspracticaltest/my-apcs-handout/index.html">
@@ -44,30 +42,18 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://live.staticflickr.com/65535/53128470737_d105641fc7_c.jpg">
 
+
 <link rel="canonical" href="http://mtmatt.page/apcs/apcspracticaltest/my-apcs-handout/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>APCS 講義 | mtmatt.Page</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://mtmatt.page/apcs/apcspracticaltest/my-apcs-handout/","path":"apcs/apcspracticaltest/my-apcs-handout/","title":"APCS 講義"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>APCS 講義 | mtmatt.Page</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WEF64N8VXG"></script>
-    <script data-pjax>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WEF64N8VXG');
-      }
-    </script>
+
+
 
 
 
@@ -75,57 +61,33 @@
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">mtmatt.Page</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">mtmatt.Page</p>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">commonPage</p>
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
     </div>
   </div>
 </div>
@@ -133,148 +95,147 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
-  </li>
-        <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+</header>
+        
+  
+  <aside class="sidebar">
 
-  </li>
-        <li class="menu-item menu-item-tags">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E8%B5%B7-%E8%AA%AA%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">源起 &amp; 說明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E8%80%85%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">作者序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%B9%E7%8B%80%E6%A8%B9%E7%B5%84-BIT"><span class="nav-number">3.</span> <span class="nav-text">樹狀樹組-BIT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%A7"><span class="nav-number">3.1.</span> <span class="nav-text">回顧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E9%80%94-%E6%A6%82%E5%BF%B5"><span class="nav-number">3.2.</span> <span class="nav-text">用途 &amp; 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.3.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%80%B2%E4%BD%8D%E8%A1%A8"><span class="nav-number">3.3.1.</span> <span class="nav-text">二進位表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lowbit"><span class="nav-number">3.3.2.</span> <span class="nav-text">lowbit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2"><span class="nav-number">3.3.3.</span> <span class="nav-text">查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9"><span class="nav-number">3.3.4.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.3.5.</span> <span class="nav-text">程式碼</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%92%E9%A1%8C"><span class="nav-number">3.4.</span> <span class="nav-text">習題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-13-1-%E5%8D%80%E5%9F%9F%E8%AA%BF%E6%9F%A5-POJ-1195-Mobile-phones-%E6%94%B9%E7%B7%A8"><span class="nav-number">3.4.1.</span> <span class="nav-text">Q-13-1 區域調查(POJ.1195 Mobile phones 改編)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E"><span class="nav-number">3.4.1.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1"><span class="nav-number">3.4.1.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1"><span class="nav-number">3.4.1.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-13-2-2D-rank-finding-problem-98%E5%AD%B8%E5%B9%B4%E5%BA%A6%E4%B8%AD%E6%8A%95%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD"><span class="nav-number">3.4.2.</span> <span class="nav-text">Q-13-2 2D rank finding problem(98學年度中投區資訊學科能力競賽)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0-1"><span class="nav-number">3.4.2.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-1"><span class="nav-number">3.4.2.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-1"><span class="nav-number">3.4.2.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-1"><span class="nav-number">3.4.2.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-1"><span class="nav-number">3.4.2.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-13-3-%E4%BD%8E%E5%9C%B0%E8%B7%9D%E9%9B%A2-2020%E5%B9%B410%E6%9C%88APCS"><span class="nav-number">3.4.3.</span> <span class="nav-text">Q-13-3 低地距離(2020年10月APCS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0-2"><span class="nav-number">3.4.3.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-2"><span class="nav-number">3.4.3.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-2"><span class="nav-number">3.4.3.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-2"><span class="nav-number">3.4.3.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-2"><span class="nav-number">3.4.3.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%9A%E6%AE%B5%E6%A8%B9"><span class="nav-number">4.</span> <span class="nav-text">線段樹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%B3%95-%E6%A6%82%E5%BF%B5"><span class="nav-number">4.1.</span> <span class="nav-text">用法 &amp; 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-1"><span class="nav-number">4.2.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E6%A8%99%E5%9E%8B"><span class="nav-number">4.2.1.</span> <span class="nav-text">指標型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%A3%E5%88%97%E5%9E%8B"><span class="nav-number">4.2.2.</span> <span class="nav-text">陣列型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%87%B6%E4%BA%BA%E6%A8%99%E8%A8%98"><span class="nav-number">4.3.</span> <span class="nav-text">懶人標記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-2"><span class="nav-number">4.3.1.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E6%A8%99%E5%9E%8B-1"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">指標型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%92%E9%A1%8C-1"><span class="nav-number">4.4.</span> <span class="nav-text">習題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Segment-Tree-%E7%B7%B4%E7%BF%92-ZJe409"><span class="nav-number">4.4.1.</span> <span class="nav-text">Segment Tree 練習(ZJe409)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">題目概述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-3"><span class="nav-number">4.4.1.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-3"><span class="nav-number">4.4.1.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-3"><span class="nav-number">4.4.1.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-3"><span class="nav-number">4.4.1.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%B0%E8%A1%93%E8%B3%87%E6%96%99%E5%BA%AB-110%E5%AE%9C%E4%B8%AD%E8%B3%87%E8%A8%8A%E7%A4%BE%E6%A0%A1%E5%85%A7%E8%B3%BDpF"><span class="nav-number">4.4.2.</span> <span class="nav-text">戰術資料庫(110宜中資訊社校內賽pF)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0-3"><span class="nav-number">4.4.2.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-4"><span class="nav-number">4.4.2.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-4"><span class="nav-number">4.4.2.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-4"><span class="nav-number">4.4.2.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-4"><span class="nav-number">4.4.2.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%B9%E5%A0%86-Treap"><span class="nav-number">5.</span> <span class="nav-text">樹堆(Treap)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%8F%E5%89%87%E8%88%87%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="nav-number">5.1.</span> <span class="nav-text">規則與前置作業</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Safe-Sorter"><span class="nav-number">5.1.1.</span> <span class="nav-text">Safe Sorter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge"><span class="nav-number">5.1.2.</span> <span class="nav-text">Merge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-3"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Split"><span class="nav-number">5.1.3.</span> <span class="nav-text">Split</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-4"><span class="nav-number">5.1.3.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E6%AC%A1%E6%A8%B9"><span class="nav-number">5.1.4.</span> <span class="nav-text">名次樹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SplitBySize"><span class="nav-number">5.1.5.</span> <span class="nav-text">SplitBySize</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-5"><span class="nav-number">5.1.5.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%A8%E6%A9%9F%E6%95%B8"><span class="nav-number">5.1.6.</span> <span class="nav-text">隨機數</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">5.2.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">5.2.1.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-6"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Erase"><span class="nav-number">5.2.2.</span> <span class="nav-text">Erase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%AA%E9%99%A4%E6%89%80%E6%9C%89%E7%AD%89%E6%96%BC-v-%E7%9A%84%E6%95%B8-%E6%95%B4%E6%95%B8%E6%89%8D%E5%8F%AF%E4%BB%A5"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">1. 刪除所有等於 v 的數(整數才可以)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%AA%E9%99%A4%E4%B8%80%E5%80%8B%E7%AD%89%E6%96%BC-v-%E7%9A%84%E6%95%B8-%E6%95%B4%E6%95%B8%E6%89%8D%E5%8F%AF%E4%BB%A5"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">2. 刪除一個等於 v 的數(整數才可以)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-7"><span class="nav-number">5.2.2.3.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Count"><span class="nav-number">5.2.3.</span> <span class="nav-text">Count</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-8"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kth-Small-Element"><span class="nav-number">5.2.4.</span> <span class="nav-text">Kth Small Element</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-9"><span class="nav-number">5.2.4.1.</span> <span class="nav-text">實作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%B2%E9%9A%8E%E5%8A%9F%E8%83%BD"><span class="nav-number">5.3.</span> <span class="nav-text">進階功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-10"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Erase-1"><span class="nav-number">5.3.2.</span> <span class="nav-text">Erase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-11"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E9%96%93%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.3.</span> <span class="nav-text">區間操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E9%96%93%E6%9F%A5%E8%A9%A2-%E6%A5%B5%E5%80%BC%E3%80%81%E7%B8%BD%E5%92%8C"><span class="nav-number">5.3.4.</span> <span class="nav-text">區間查詢(極值、總和)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-12"><span class="nav-number">5.3.4.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%96%AE%E9%BB%9E%E4%BF%AE%E6%94%B9"><span class="nav-number">5.3.5.</span> <span class="nav-text">單點修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E9%96%93%E6%93%8D%E4%BD%9C-1"><span class="nav-number">5.3.6.</span> <span class="nav-text">區間操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-13"><span class="nav-number">5.3.6.1.</span> <span class="nav-text">實作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.</span> <span class="nav-text">特殊功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Count-l-r"><span class="nav-number">5.4.1.</span> <span class="nav-text">Count \([ ; l, , r ; ]\)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-14"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sum-l-r-rank"><span class="nav-number">5.4.2.</span> <span class="nav-text">Sum \([ ; l, , r ; ]\) (rank)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-15"><span class="nav-number">5.4.2.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%A7%8B%E5%BC%8F"><span class="nav-number">5.4.3.</span> <span class="nav-text">解構式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%BC%89%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA"><span class="nav-number">5.4.4.</span> <span class="nav-text">重載輸入輸出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B-STL-%E7%9A%84%E5%B8%B8%E8%A6%8B%E5%87%BD%E5%BC%8F"><span class="nav-number">5.4.5.</span> <span class="nav-text">一些 STL 的常見函式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E6%A7%8B%E5%BC%8F"><span class="nav-number">5.4.6.</span> <span class="nav-text">建構式</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
 
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>網站地圖</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">mtmatt</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">文章</span>
         </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
 
     </div>
-  </div>
 
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
+    <div class="main-inner post posts-expand">
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+  
 
-          <div class="content post posts-expand">
-            
 
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/apcs/apcspracticaltest/my-apcs-handout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="mtmatt.Page">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="APCS 講義 | mtmatt.Page">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           APCS 講義
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2023-07-10 08:00:00" itemprop="dateCreated datePublished" datetime="2023-07-10T08:00:00+08:00">2023-07-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/apcs/" itemprop="url" rel="index"><span itemprop="name">apcs</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/apcs/apcspracticaltest/" itemprop="url" rel="index"><span itemprop="name">apcspracticaltest</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2023-07-10 08:00:00" itemprop="dateCreated datePublished" datetime="2023-07-10T08:00:00+08:00">2023-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-29 11:28:20" itemprop="dateModified" datetime="2024-06-29T11:28:20+08:00">2024-06-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/apcs/" itemprop="url" rel="index"><span itemprop="name">apcs</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/apcs/apcspracticaltest/" itemprop="url" rel="index"><span itemprop="name">apcspracticaltest</span></a>
+        </span>
+    </span>
 
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>24k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>43 分鐘</span>
-            </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>24k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>43 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -282,10 +243,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <h1 id="源起-說明"><a href="#源起-說明" class="headerlink" title="源起 &amp; 說明"></a>源起 &amp; 說明</h1><p>起心動念編纂這本「講義」的時候，正值我準備 APCS 考試期間，當時也正在就讀高中，考量到時間上的不足，我邀請 3 個人一起參與，所以，作者總共有 4 個人，而本篇貼文所摘錄的是我所創作的部分。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="源起-說明"><a href="#源起-說明" class="headerlink" title="源起 &amp; 說明"></a>源起 &amp; 說明</h1><p>起心動念編纂這本「講義」的時候，正值我準備 APCS 考試期間，當時也正在就讀高中，考量到時間上的不足，我邀請 3 個人一起參與，所以，作者總共有 4 個人，而本篇貼文所摘錄的是我所創作的部分。</p>
 <h1 id="作者序"><a href="#作者序" class="headerlink" title="作者序"></a>作者序</h1><p>演算法與資料結構一直以來都是程式設計中最重要的部分。然而許多的書籍在介紹時，出於篇幅考量，字句精簡，以致晦澀難懂。本書旨在對於演算法及資料結構進行詳細的介紹，避免初學者遇到與我相同的困境，因而花費許多時間。雖說是競賽入門，然我仍有計畫放一些進階的資料結構與演算法。</p>
 <p>後續我盡可能會將所有題目放在 ZeroJudge 的課程裡，方便大家測試自己的程式碼，也方便除錯。<br>(參加課程方式。從使用者選單-&gt;「參加課程」-&gt;課程代碼：a7HcCs)</p>
 <p>這本書作為我程式設計學習的其中一個指標，也是我自主學習計畫的內容。希望能幫助到一些在資料結構與演算法的學習與運用上不知如何進展的人。</p>
@@ -699,7 +657,7 @@
     
     
 
-      <footer class="post-footer">
+    <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/apcs/" rel="tag"># apcs</a>
               <a href="/tags/APCS%E8%88%87%E7%AB%B6%E8%B3%BD%E5%85%A5%E9%96%80/" rel="tag"># APCS與競賽入門</a>
@@ -707,237 +665,85 @@
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/ojques/codeforces-round-826-pd/" rel="prev" title="Codeforces Round 826 pD">
-      <i class="fa fa-chevron-left"></i> Codeforces Round 826 pD
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/misc/offline-judge-system-operating-update/" rel="next" title="(Update) Offline Judge 離線程式評測系統">
-      (Update) Offline Judge 離線程式評測系統 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ojques/codeforces-round-826-pd/" rel="prev" title="Codeforces Round 826 pD">
+                  <i class="fa fa-angle-left"></i> Codeforces Round 826 pD
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/misc/offline-judge-system-operating-update/" rel="next" title="(Update) Offline Judge 離線程式評測系統">
+                  (Update) Offline Judge 離線程式評測系統 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E8%B5%B7-%E8%AA%AA%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">源起 &amp; 說明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E8%80%85%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">作者序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%B9%E7%8B%80%E6%A8%B9%E7%B5%84-BIT"><span class="nav-number">3.</span> <span class="nav-text">樹狀樹組-BIT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%A7"><span class="nav-number">3.1.</span> <span class="nav-text">回顧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E9%80%94-%E6%A6%82%E5%BF%B5"><span class="nav-number">3.2.</span> <span class="nav-text">用途 &amp; 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.3.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%80%B2%E4%BD%8D%E8%A1%A8"><span class="nav-number">3.3.1.</span> <span class="nav-text">二進位表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lowbit"><span class="nav-number">3.3.2.</span> <span class="nav-text">lowbit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2"><span class="nav-number">3.3.3.</span> <span class="nav-text">查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9"><span class="nav-number">3.3.4.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.3.5.</span> <span class="nav-text">程式碼</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%92%E9%A1%8C"><span class="nav-number">3.4.</span> <span class="nav-text">習題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-13-1-%E5%8D%80%E5%9F%9F%E8%AA%BF%E6%9F%A5-POJ-1195-Mobile-phones-%E6%94%B9%E7%B7%A8"><span class="nav-number">3.4.1.</span> <span class="nav-text">Q-13-1 區域調查(POJ.1195 Mobile phones 改編)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E"><span class="nav-number">3.4.1.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1"><span class="nav-number">3.4.1.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1"><span class="nav-number">3.4.1.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-13-2-2D-rank-finding-problem-98%E5%AD%B8%E5%B9%B4%E5%BA%A6%E4%B8%AD%E6%8A%95%E5%8D%80%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E7%AB%B6%E8%B3%BD"><span class="nav-number">3.4.2.</span> <span class="nav-text">Q-13-2 2D rank finding problem(98學年度中投區資訊學科能力競賽)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0-1"><span class="nav-number">3.4.2.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-1"><span class="nav-number">3.4.2.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-1"><span class="nav-number">3.4.2.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-1"><span class="nav-number">3.4.2.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-1"><span class="nav-number">3.4.2.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-13-3-%E4%BD%8E%E5%9C%B0%E8%B7%9D%E9%9B%A2-2020%E5%B9%B410%E6%9C%88APCS"><span class="nav-number">3.4.3.</span> <span class="nav-text">Q-13-3 低地距離(2020年10月APCS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0-2"><span class="nav-number">3.4.3.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-2"><span class="nav-number">3.4.3.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-2"><span class="nav-number">3.4.3.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-2"><span class="nav-number">3.4.3.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-2"><span class="nav-number">3.4.3.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%9A%E6%AE%B5%E6%A8%B9"><span class="nav-number">4.</span> <span class="nav-text">線段樹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%B3%95-%E6%A6%82%E5%BF%B5"><span class="nav-number">4.1.</span> <span class="nav-text">用法 &amp; 概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-1"><span class="nav-number">4.2.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E6%A8%99%E5%9E%8B"><span class="nav-number">4.2.1.</span> <span class="nav-text">指標型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%A3%E5%88%97%E5%9E%8B"><span class="nav-number">4.2.2.</span> <span class="nav-text">陣列型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%87%B6%E4%BA%BA%E6%A8%99%E8%A8%98"><span class="nav-number">4.3.</span> <span class="nav-text">懶人標記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-2"><span class="nav-number">4.3.1.</span> <span class="nav-text">實作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E6%A8%99%E5%9E%8B-1"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">指標型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%92%E9%A1%8C-1"><span class="nav-number">4.4.</span> <span class="nav-text">習題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Segment-Tree-%E7%B7%B4%E7%BF%92-ZJe409"><span class="nav-number">4.4.1.</span> <span class="nav-text">Segment Tree 練習(ZJe409)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">題目概述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-3"><span class="nav-number">4.4.1.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-3"><span class="nav-number">4.4.1.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-3"><span class="nav-number">4.4.1.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-3"><span class="nav-number">4.4.1.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%B0%E8%A1%93%E8%B3%87%E6%96%99%E5%BA%AB-110%E5%AE%9C%E4%B8%AD%E8%B3%87%E8%A8%8A%E7%A4%BE%E6%A0%A1%E5%85%A7%E8%B3%BDpF"><span class="nav-number">4.4.2.</span> <span class="nav-text">戰術資料庫(110宜中資訊社校內賽pF)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E6%95%98%E8%BF%B0-3"><span class="nav-number">4.4.2.1.</span> <span class="nav-text">題目敘述 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5%E8%AA%AA%E6%98%8E-4"><span class="nav-number">4.4.2.2.</span> <span class="nav-text">輸入說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA%E8%AA%AA%E6%98%8E-4"><span class="nav-number">4.4.2.3.</span> <span class="nav-text">輸出說明 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A5-1-4"><span class="nav-number">4.4.2.4.</span> <span class="nav-text">範例輸入 1 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA-1-4"><span class="nav-number">4.4.2.5.</span> <span class="nav-text">範例輸出 1 :</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%B9%E5%A0%86-Treap"><span class="nav-number">5.</span> <span class="nav-text">樹堆(Treap)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%8F%E5%89%87%E8%88%87%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="nav-number">5.1.</span> <span class="nav-text">規則與前置作業</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Safe-Sorter"><span class="nav-number">5.1.1.</span> <span class="nav-text">Safe Sorter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge"><span class="nav-number">5.1.2.</span> <span class="nav-text">Merge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-3"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Split"><span class="nav-number">5.1.3.</span> <span class="nav-text">Split</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-4"><span class="nav-number">5.1.3.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E6%AC%A1%E6%A8%B9"><span class="nav-number">5.1.4.</span> <span class="nav-text">名次樹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SplitBySize"><span class="nav-number">5.1.5.</span> <span class="nav-text">SplitBySize</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-5"><span class="nav-number">5.1.5.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%A8%E6%A9%9F%E6%95%B8"><span class="nav-number">5.1.6.</span> <span class="nav-text">隨機數</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">5.2.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">5.2.1.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-6"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Erase"><span class="nav-number">5.2.2.</span> <span class="nav-text">Erase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%AA%E9%99%A4%E6%89%80%E6%9C%89%E7%AD%89%E6%96%BC-v-%E7%9A%84%E6%95%B8-%E6%95%B4%E6%95%B8%E6%89%8D%E5%8F%AF%E4%BB%A5"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">1. 刪除所有等於 v 的數(整數才可以)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%AA%E9%99%A4%E4%B8%80%E5%80%8B%E7%AD%89%E6%96%BC-v-%E7%9A%84%E6%95%B8-%E6%95%B4%E6%95%B8%E6%89%8D%E5%8F%AF%E4%BB%A5"><span class="nav-number">5.2.2.2.</span> <span class="nav-text">2. 刪除一個等於 v 的數(整數才可以)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-7"><span class="nav-number">5.2.2.3.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Count"><span class="nav-number">5.2.3.</span> <span class="nav-text">Count</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-8"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kth-Small-Element"><span class="nav-number">5.2.4.</span> <span class="nav-text">Kth Small Element</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-9"><span class="nav-number">5.2.4.1.</span> <span class="nav-text">實作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%B2%E9%9A%8E%E5%8A%9F%E8%83%BD"><span class="nav-number">5.3.</span> <span class="nav-text">進階功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-10"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Erase-1"><span class="nav-number">5.3.2.</span> <span class="nav-text">Erase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-11"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E9%96%93%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.3.</span> <span class="nav-text">區間操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E9%96%93%E6%9F%A5%E8%A9%A2-%E6%A5%B5%E5%80%BC%E3%80%81%E7%B8%BD%E5%92%8C"><span class="nav-number">5.3.4.</span> <span class="nav-text">區間查詢(極值、總和)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-12"><span class="nav-number">5.3.4.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%96%AE%E9%BB%9E%E4%BF%AE%E6%94%B9"><span class="nav-number">5.3.5.</span> <span class="nav-text">單點修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E9%96%93%E6%93%8D%E4%BD%9C-1"><span class="nav-number">5.3.6.</span> <span class="nav-text">區間操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-13"><span class="nav-number">5.3.6.1.</span> <span class="nav-text">實作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.</span> <span class="nav-text">特殊功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Count-l-r"><span class="nav-number">5.4.1.</span> <span class="nav-text">Count \([ ; l, , r ; ]\)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-14"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sum-l-r-rank"><span class="nav-number">5.4.2.</span> <span class="nav-text">Sum \([ ; l, , r ; ]\) (rank)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C-15"><span class="nav-number">5.4.2.1.</span> <span class="nav-text">實作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%A7%8B%E5%BC%8F"><span class="nav-number">5.4.3.</span> <span class="nav-text">解構式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%BC%89%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA"><span class="nav-number">5.4.4.</span> <span class="nav-text">重載輸入輸出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B-STL-%E7%9A%84%E5%B8%B8%E8%A6%8B%E5%87%BD%E5%BC%8F"><span class="nav-number">5.4.5.</span> <span class="nav-text">一些 STL 的常見函式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E6%A7%8B%E5%BC%8F"><span class="nav-number">5.4.6.</span> <span class="nav-text">建構式</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">mtmatt</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">93</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">18</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
+    </footer>
+  </article>
 </div>
 
 
 
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+</div>
+  </main>
 
-        
+  <footer class="footer">
+    <div class="footer-inner">
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2024</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">mtmatt</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
     </span>
-      <span class="post-meta-item-text">總字數：</span>
+    <span class="author" itemprop="copyrightHolder">mtmatt</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
     <span title="總字數">184k</span>
-    <span class="post-meta-divider">|</span>
+  </span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-      <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
     <span title="所需總閱讀時間">5:35</span>
+  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
 
-        
+    </div>
+  </footer>
 
-
-
-
-
-
-
-
-      </div>
-    </footer>
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
+  
 
 
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
 
 
 
@@ -947,81 +753,6 @@ window.addEventListener('pjax:success', () => {
 
 
 
-  
-<script src="/js/local-search.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="pjax">
-  
-
-  
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
-
-  
-
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
