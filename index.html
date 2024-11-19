@@ -206,6 +206,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/dataStructure/binary-heap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/dataStructure/binary-heap/" class="post-title-link" itemprop="url">Binary Heap</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-11-15 08:00:00" itemprop="dateCreated datePublished" datetime="2024-11-15T08:00:00+08:00">2024-11-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dataStructure/" itemprop="url" rel="index"><span itemprop="name">dataStructure</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>7 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>堆積是一種特殊的樹狀資料結構，滿足以下性質，以下用最大堆積為例</p>
+<ol>
+<li>Parent Node 的值總是大於等於 Child Nodes 的值。</li>
+<li>Binary Heap 為一個完全二元樹，即除了最底層，其他層都是滿的，且最底層的節點都靠左對齊。</li>
+</ol>
+<p>至於什麼是二元樹？二元樹是一種樹狀結構，其每個節點最多只能有兩個 Children。</p>
+<h2 id="Heap-operations"><a href="#Heap-operations" class="headerlink" title="Heap operations"></a>Heap operations</h2><p>堆積有以下幾種操作</p>
+<ol>
+<li>Build Heap: 將一個陣列轉換成堆積</li>
+<li>Insert: 插入一個新元素到堆積中</li>
+<li>Extract Max: 移除並回傳堆積中最大的元素</li>
+</ol>
+<h2 id="Build-Heap-Heapify"><a href="#Build-Heap-Heapify" class="headerlink" title="Build Heap (Heapify)"></a>Build Heap (Heapify)</h2><p>將一個陣列轉換成堆積的方法稱為 Heapify。</p>
+<p>常見的方法是從最後一個 Parent Node 開始，將每個 Parent Node 與其 Children 比較，若 Parent Node 小於 Children，則交換兩者的值，並繼續往下比較，直到該 Parent Node 大於等於所有他的新 Children。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/dataStructure/binary-heap/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/dataStructure/application-of-link-lists/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1141,102 +1242,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/cppreview/the-key-for-a-practical-test-of-dynamic-programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/cppreview/the-key-for-a-practical-test-of-dynamic-programming/" class="post-title-link" itemprop="url">[題解]動態規劃-圍棋遊戲</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-12-28 08:00:00" itemprop="dateCreated datePublished" datetime="2022-12-28T08:00:00+08:00">2022-12-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/cppreview/" itemprop="url" rel="index"><span itemprop="name">cppreview</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>4 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-
-<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>由題目可知，必須由甲開始，甲結束。因此，取的次數是奇數。我們可以將第一個甲獨立判斷，後面乙甲都綁定在一起。於是，可以得到。<br>\(dp_n &#x3D; dp_{n-2} + 2 \times dp_{n-3} + dp_{n-4}\)</p>
-<p>其中，\(dp_{n-2}\) 是最後乙甲都取 1 個棋子；\(dp_{n-3}\) 是最後乙甲其中一個取 1 個棋子，\(dp_{n-4}\) 是最後乙甲都取 2 個棋子的方法數。</p>
-<p>由於這是一個線性遞迴的轉移式，因此我們可以用矩陣乘法進一步優化。<br>$$<br>    \begin{pmatrix}dp_{n} \ dp_{n-1} \ dp_{n-2} \ dp_{n-3} \end{pmatrix} &#x3D;<br>    \begin{pmatrix}<br>    0 &amp; 1 &amp; 2 &amp; 1 \<br>    1 &amp; 0 &amp; 0 &amp; 0 \<br>    0 &amp; 1 &amp; 0 &amp; 0 \<br>    0 &amp; 0 &amp; 1 &amp; 0<br>    \end{pmatrix}<br>    \times<br>    \begin{pmatrix}dp_{n-1} \ dp_{n-2} \ dp_{n-3} \ dp_{n-4} \end{pmatrix}<br>$$</p>
-<p>最後，\(dp_0&#x3D;0, ; dp_1 &#x3D; dp_2 &#x3D; dp_3 &#x3D;1\)，因此，可以整理如下。<br>$$<br>\begin{pmatrix}dp_{n} \ dp_{n-1} \ dp_{n-2} \ dp_{n-3} \end{pmatrix} &#x3D;<br>\begin{pmatrix}<br>0 &amp; 1 &amp; 2 &amp; 1 \<br>1 &amp; 0 &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{pmatrix} ^ {n-3}<br>\times<br>\begin{pmatrix};1; \ 1 \ 1 \ 0 \end{pmatrix}<br>$$<br>用快速冪的技巧將複雜度優化至 \(O(4^3 \times \log_{2}{n})\)</p>
-<hr>
-<h3 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">using</span> vll=vector&lt;ll&gt;;</span><br><span class="line"><span class="keyword">using</span> Mer=vector&lt;vll&gt;;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> ll MOD=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">Mer <span class="keyword">operator</span>*(Mer a,Mer b)&#123;</span><br><span class="line">    <span class="function">Mer <span class="title">ret</span><span class="params">(a.size(),vll(b[<span class="number">0</span>].size()))</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;a.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;b[<span class="number">0</span>].<span class="built_in">size</span>();++j)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;a.<span class="built_in">size</span>();++k)&#123;</span><br><span class="line">                ret[i][j]=(ret[i][j]+a[i][k]*b[k][j])%MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Mer <span class="title">POW</span><span class="params">(Mer a,ll x)</span></span>&#123;</span><br><span class="line">    <span class="function">Mer <span class="title">ret</span><span class="params">(a.size(),vll(a[<span class="number">0</span>].size(),<span class="number">0</span>))</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;a.<span class="built_in">size</span>();++i) ret[i][i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(x&amp;<span class="number">1</span>) ret=ret*a;</span><br><span class="line">        a=a*a;</span><br><span class="line">        x&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    ll n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">3</span>)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        Mer t=<span class="built_in">Mer</span>(&#123;</span><br><span class="line">            &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>&#125;,</span><br><span class="line">            &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,</span><br><span class="line">            &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,</span><br><span class="line">            &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        t=<span class="built_in">POW</span>(t,n<span class="number">-3</span>);</span><br><span class="line"></span><br><span class="line">        Mer ans=<span class="built_in">Mer</span>(&#123;&#123;<span class="number">1</span>&#125;,&#123;<span class="number">1</span>&#125;,&#123;<span class="number">1</span>&#125;,&#123;<span class="number">0</span>&#125;&#125;);</span><br><span class="line"></span><br><span class="line">        ans=t*ans;</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;ans[<span class="number">0</span>][<span class="number">0</span>]&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/cppreview/the-key-for-a-practical-test-of-dynamic-programming/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1306,7 +1311,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">94</span>
+          <span class="site-state-item-count">95</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1356,13 +1361,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">186k</span>
+    <span title="總字數">190k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">5:37</span>
+    <span title="所需總閱讀時間">5:45</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
   </div>
