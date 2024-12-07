@@ -30,7 +30,7 @@
 <meta property="og:description" content="Introduction堆積是一種特殊的樹狀資料結構，滿足以下性質，以下用最大堆積為例  Parent Node 的值總是大於等於 Child Nodes 的值。 Binary Heap 為一個完全二元樹，即除了最底層，其他層都是滿的，且最底層的節點都靠左對齊。  至於什麼是二元樹？二元樹是一種樹狀結構，其每個節點最多只能有兩個 Children。 Heap operations堆積有以下幾種操作">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-11-15T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-19T13:40:55.766Z">
+<meta property="article:modified_time" content="2024-12-07T00:32:00.065Z">
 <meta property="article:author" content="mtmatt">
 <meta property="article:tag" content="cpp">
 <meta name="twitter:card" content="summary">
@@ -311,19 +311,19 @@
 <h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">6</span><br><span class="line">4</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
 
 <h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h3><ul>
-<li>(1 \leq n \leq 10^5)</li>
-<li>(1 \leq q \leq 2 \times 10^5)</li>
-<li>(-10^9 \leq \text{val} \leq 10^9)</li>
+<li>\(1 \leq n \leq 10^5\)</li>
+<li>\(1 \leq q \leq 2 \times 10^5\)</li>
+<li>\(-10^9 \leq \text{val} \leq 10^9\)</li>
 </ul>
 <h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><h3 id="Median-Maintenance"><a href="#Median-Maintenance" class="headerlink" title="Median Maintenance"></a>Median Maintenance</h3><p>Median Maintenance 是一個維護中位數的問題，即對於一個數列，每次插入一個新元素後，求該數列的中位數。</p>
-<p>一個簡單的方法是每次都將數列排序後，取中間的元素，但這樣的時間複雜度為 (O(n \times n \log n))。</p>
+<p>一個簡單的方法是每次都將數列排序後，取中間的元素，但這樣的時間複雜度為 \(O(n \times n \log n)\)。</p>
 <p>我們可以使用兩個堆積來解決這個問題，一個最大堆積 <code>max_heap</code> 用來存放數列的一半，一個最小堆積 <code>min_heap</code> 用來存放數列的另一半。由於特殊的存放的方式，我們可以保證當數列的元素個數為奇數時，中位數為 <code>max_heap</code> 的根節點，當數列的元素個數為偶數時，中位數為 <code>max_heap</code> 的根節點和 <code>min_heap</code> 的根節點的平均值。</p>
 <p>每次插入一個新元素時，我們先將該元素插入 <code>max_heap</code>，然後將 <code>max_heap</code> 的最大元素取出插入 <code>min_heap</code>，並保持 <code>max_heap</code> 的元素個數大於等於 <code>min_heap</code> 的元素個數。</p>
-<p>這樣的時間複雜度為 (O(n \log n))。另一種方法是使用紅黑樹等平衡樹，時間複雜度同為 (O(n \log n)) 但常數較大。</p>
+<p>這樣的時間複雜度為 \(O(n \log n)\)。另一種方法是使用紅黑樹等平衡樹，時間複雜度同為 \(O(n \log n)\) 但常數較大。</p>
 <blockquote>
 <p>如果一個數列有基數個數字，中位數表示排序後最中間的。如果是偶數個數字，則表示中間兩個的平均，在這一題，你只需要用整數除法即可。</p>
 </blockquote>
-<h3 id="Dijkstra’s-Shortest-Path-Algorithm"><a href="#Dijkstra’s-Shortest-Path-Algorithm" class="headerlink" title="Dijkstra’s Shortest Path Algorithm"></a>Dijkstra’s Shortest Path Algorithm</h3><p>Dijkstra’s Shortest Path Algorithm 是一個用來求單源最短路徑的演算法，其基本思想是每次選擇當前距離最短的節點，並更新與其相鄰的節點的距離。我們可以使用一個最小堆積來實現 Dijkstra’s Shortest Path Algorithm，每次從堆積中取出距離最短的節點，並更新與其相鄰的節點的距離。複雜度為 (O((V + E) \log V))。</p>
+<h3 id="Dijkstra’s-Shortest-Path-Algorithm"><a href="#Dijkstra’s-Shortest-Path-Algorithm" class="headerlink" title="Dijkstra’s Shortest Path Algorithm"></a>Dijkstra’s Shortest Path Algorithm</h3><p>Dijkstra’s Shortest Path Algorithm 是一個用來求單源最短路徑的演算法，其基本思想是每次選擇當前距離最短的節點，並更新與其相鄰的節點的距離。我們可以使用一個最小堆積來實現 Dijkstra’s Shortest Path Algorithm，每次從堆積中取出距離最短的節點，並更新與其相鄰的節點的距離。複雜度為 \(O((V + E) \log V)\)。</p>
 <h3 id="Huffman-Coding"><a href="#Huffman-Coding" class="headerlink" title="Huffman Coding"></a>Huffman Coding</h3><p>Huffman Coding 是一種用來將一個字串編碼的演算法，其基本思想是將出現頻率較高的字元編碼為較短的編碼，出現頻率較低的字元編碼為較長的編碼。我們可以使用一個最小堆積來實現 Huffman Coding，每次從堆積中取出出現頻率最低的兩個字元，並將他們合併成一個新的節點，然後將新的節點插入堆積中。</p>
 
     </div>
