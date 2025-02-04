@@ -296,7 +296,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-warm-up-1-sales-by-match/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-warm-up-3-jumping-on-the-cloud/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -310,7 +310,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hacker-rank-warm-up-1-sales-by-match/" class="post-title-link" itemprop="url">HackerRank Warm-up 1.Sales by Match, in C++</a>
+            <a href="/ojques/hacker-rank-warm-up-3-jumping-on-the-cloud/" class="post-title-link" itemprop="url">HackerRank Warm-up 3.Jumping on the Clouds, in C++</a>
         </h2>
 
         <div class="post-meta">
@@ -338,7 +338,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>307</span>
+              <span>347</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -357,12 +357,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：Sales-by-Match-HackerRank"><a href="#題目連結：Sales-by-Match-HackerRank" class="headerlink" title="題目連結：Sales by Match | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/sock-merchant/">Sales by Match | HackerRank</a></h3><p>因應HackerRank系統，而分享 Coding 核心部分</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sockMerchant</span><span class="params">(<span class="type">int</span> n, vector&lt;<span class="type">int</span>&gt; ar)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct[<span class="number">105</span>]&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:ar)&#123;</span><br><span class="line">        ct[a]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">105</span>;i++)&#123;</span><br><span class="line">        ans+=ct[i]/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：Jumping-on-the-Clouds-HackerRank"><a href="#題目連結：Jumping-on-the-Clouds-HackerRank" class="headerlink" title="題目連結：Jumping on the Clouds | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/">Jumping on the Clouds | HackerRank</a></h3><p>基本DP</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">jumpingOnClouds</span><span class="params">(vector&lt;<span class="type">int</span>&gt; c)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dp[<span class="number">105</span>];</span><br><span class="line">    <span class="built_in">fill</span>(dp,dp+<span class="number">105</span>,<span class="number">0x3f3f3f3f</span>);</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(c[<span class="number">1</span>]==<span class="number">0</span>) dp[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;c.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c[i]==<span class="number">0</span>) dp[i]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>],dp[i<span class="number">-2</span>])+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> dp[i]=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[c.<span class="built_in">size</span>()<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-warm-up-1-sales-by-match/#more" rel="contents">
+              <a class="btn" href="/ojques/hacker-rank-warm-up-3-jumping-on-the-cloud/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -566,7 +566,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-warm-up-3-jumping-on-the-cloud/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-warm-up-1-sales-by-match/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -580,7 +580,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hacker-rank-warm-up-3-jumping-on-the-cloud/" class="post-title-link" itemprop="url">HackerRank Warm-up 3.Jumping on the Clouds, in C++</a>
+            <a href="/ojques/hacker-rank-warm-up-1-sales-by-match/" class="post-title-link" itemprop="url">HackerRank Warm-up 1.Sales by Match, in C++</a>
         </h2>
 
         <div class="post-meta">
@@ -608,7 +608,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>347</span>
+              <span>307</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -627,12 +627,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：Jumping-on-the-Clouds-HackerRank"><a href="#題目連結：Jumping-on-the-Clouds-HackerRank" class="headerlink" title="題目連結：Jumping on the Clouds | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/">Jumping on the Clouds | HackerRank</a></h3><p>基本DP</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">jumpingOnClouds</span><span class="params">(vector&lt;<span class="type">int</span>&gt; c)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dp[<span class="number">105</span>];</span><br><span class="line">    <span class="built_in">fill</span>(dp,dp+<span class="number">105</span>,<span class="number">0x3f3f3f3f</span>);</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(c[<span class="number">1</span>]==<span class="number">0</span>) dp[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;c.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c[i]==<span class="number">0</span>) dp[i]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>],dp[i<span class="number">-2</span>])+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> dp[i]=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[c.<span class="built_in">size</span>()<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：Sales-by-Match-HackerRank"><a href="#題目連結：Sales-by-Match-HackerRank" class="headerlink" title="題目連結：Sales by Match | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/sock-merchant/">Sales by Match | HackerRank</a></h3><p>因應HackerRank系統，而分享 Coding 核心部分</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sockMerchant</span><span class="params">(<span class="type">int</span> n, vector&lt;<span class="type">int</span>&gt; ar)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct[<span class="number">105</span>]&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:ar)&#123;</span><br><span class="line">        ct[a]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">105</span>;i++)&#123;</span><br><span class="line">        ans+=ct[i]/<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-warm-up-3-jumping-on-the-cloud/#more" rel="contents">
+              <a class="btn" href="/ojques/hacker-rank-warm-up-1-sales-by-match/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
