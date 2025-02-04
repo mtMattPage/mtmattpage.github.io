@@ -307,6 +307,97 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/misc/incolution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/misc/incolution/" class="post-title-link" itemprop="url">Involution Calculator</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-11-15 08:00:00" itemprop="dateCreated datePublished" datetime="2024-11-15T08:00:00+08:00">2024-11-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/misc/" itemprop="url" rel="index"><span itemprop="name">misc</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>7.9k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>14 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Involution is a common transformation in mathematical contests. However, it can be difficult to visualize. Unlike the transformations typically taught in high school, an involution can produce an image that looks completely different from the original—without any apparent similarity.</p>
+<p>To some extent, you can imagine involution as follows: First, place a ball at the center of the transformation. Then, project the original image onto the north pole of the ball. Next, position a new plane parallel to the original image at the north pole and project the image back through the south pole of the ball.</p>
+<p>In the following program, I use the spng library to decode a PNG image, scale it up, apply the involution transformation, and then encode it back into a PNG file.</p>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;inttypes.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;spng.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ERR_EXIT(s) do&#123; perror(s); exit(-1); &#125; while(0);</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> get_pixel(image, row, col) (image + (row * ihdr.width + col) * bytes_per_pixel)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> get_new_pixel(image, row, col, scale) (image + (row * ihdr.width * scale + col) * bytes_per_pixel)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> get_used(used, row, col, scale) (used + (row * ihdr.width * scale + col))</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">  FILE *picture_file;</span><br><span class="line">  spng_ctx *ctx = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> *image = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">if</span> (argc &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;no input file\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Usage: involution [picture name] [inv certer row] [inv center col] [inv prod]\n&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (argc &lt; <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;miss involution center\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Usage: involution [picture name] [inv certer row] [inv center col] [inv prod]\n&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (argc &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;miss involution product\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Usage: involution [picture name] [inv certer row] [inv center col] [inv prod]\n&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> inv_center_row = atoi(argv[<span class="number">2</span>]);</span><br><span class="line">  <span class="type">int</span> inv_center_col = atoi(argv[<span class="number">3</span>]);</span><br><span class="line">  <span class="type">double</span> inv_prod = atof(argv[<span class="number">4</span>]);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Involution center: (%d, %d)\n&quot;</span>, inv_center_row, inv_center_col);</span><br><span class="line"></span><br><span class="line">  picture_file = fopen(argv[<span class="number">1</span>], <span class="string">&quot;rb&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> (picture_file == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;cannot open the file&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  ctx = spng_ctx_new(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">if</span> (ctx == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;ctx new failed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  spng_set_crc_action(ctx, SPNG_CRC_USE, SPNG_CRC_USE);</span><br><span class="line">  <span class="type">const</span> <span class="type">size_t</span> limit = <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">1024</span>;</span><br><span class="line">  spng_set_chunk_limits(ctx, limit, limit);</span><br><span class="line">  spng_set_png_file(ctx, picture_file);</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">spng_ihdr</span> <span class="title">ihdr</span>;</span></span><br><span class="line">  <span class="type">int</span> ret = spng_get_ihdr(ctx, &amp;ihdr);</span><br><span class="line">  <span class="keyword">if</span> (ret != <span class="number">0</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;get ihdr failed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;width: %u\n&quot;</span></span><br><span class="line">    <span class="string">&quot;height: %u\n&quot;</span></span><br><span class="line">    <span class="string">&quot;bit depth: %u\n&quot;</span></span><br><span class="line">    <span class="string">&quot;color type: %u\n&quot;</span>,</span><br><span class="line">    ihdr.width, ihdr.height, ihdr.bit_depth, ihdr.color_type);</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">spng_plte</span> <span class="title">plte</span> =</span> &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  ret = spng_get_plte(ctx, &amp;plte);</span><br><span class="line">  <span class="keyword">if</span> (ret != <span class="number">0</span> &amp;&amp; ret != SPNG_ECHUNKAVAIL) &#123;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;%s\n&quot;</span>, spng_strerror(ret));</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;get plte error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (ret == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;plaette entries: %u\n&quot;</span>, plte.n_entries);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">size_t</span> image_size, image_width;</span><br><span class="line">  <span class="type">int</span> fmt = SPNG_FMT_PNG;</span><br><span class="line">  <span class="keyword">if</span> (ihdr.color_type == SPNG_COLOR_TYPE_INDEXED) fmt = SPNG_FMT_RGB8;</span><br><span class="line">  ret = spng_decoded_image_size(ctx, fmt, &amp;image_size);</span><br><span class="line">  <span class="keyword">if</span> (ret != <span class="number">0</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;image size decode error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  image = <span class="built_in">malloc</span>(image_size);</span><br><span class="line">  <span class="keyword">if</span> (image == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;memory allocation failed&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  image_size = <span class="number">4</span> * ihdr.width * ihdr.height;</span><br><span class="line">  ret = spng_decode_image(ctx, image, image_size, SPNG_FMT_RGBA8, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">if</span> (ret != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;%s\n&quot;</span>, spng_strerror(ret));</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;image decode error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> scale = <span class="number">20</span>;</span><br><span class="line">  <span class="keyword">if</span> (inv_center_row &lt; <span class="number">0</span> || inv_center_col &lt; <span class="number">0</span> ||</span><br><span class="line">      inv_center_col &gt;= ihdr.width * scale || inv_center_row &gt;= ihdr.height * scale) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;invalid inv center&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> bytes_per_pixel = <span class="number">4</span>;  <span class="comment">// RGBA</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> *new_image = <span class="built_in">malloc</span>(image_size * scale * scale);</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">spng_ihdr</span> <span class="title">new_ihdr</span> =</span> ihdr;</span><br><span class="line">  new_ihdr.width *= scale;</span><br><span class="line">  new_ihdr.height *= scale;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ihdr.height; ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; ihdr.width; ++j) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; scale; ++k) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">0</span>; l &lt; scale; ++l) &#123;</span><br><span class="line">          <span class="type">unsigned</span> <span class="type">char</span> *new_pixel = (new_image +</span><br><span class="line">            ((i * scale + k) * (ihdr.width * scale) + j * scale + l) *</span><br><span class="line">              bytes_per_pixel);</span><br><span class="line">          <span class="keyword">for</span> (<span class="type">int</span> m = <span class="number">0</span>; m &lt; bytes_per_pixel; ++m) &#123;</span><br><span class="line">            new_pixel[m] = get_pixel(image, i, j)[m];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">bool</span> *used = <span class="built_in">calloc</span>(image_size * scale * scale, <span class="keyword">sizeof</span>(<span class="type">unsigned</span> <span class="type">char</span>));</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ihdr.height * scale; ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; ihdr.width * scale; ++j) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i == inv_center_row &amp;&amp; j == inv_center_col) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="type">unsigned</span> <span class="type">char</span> *pixel = get_new_pixel(new_image, i, j, scale);</span><br><span class="line">      <span class="type">int</span> dr = inv_center_row - i, dc = inv_center_col - j;</span><br><span class="line">      <span class="type">double</span> delta_len = <span class="built_in">sqrt</span>(dr * dr + dc * dc);</span><br><span class="line">      <span class="type">double</span> new_len = inv_prod / delta_len;</span><br><span class="line">      dr *= new_len / delta_len;</span><br><span class="line">      dc *= new_len / delta_len;</span><br><span class="line">      <span class="type">int</span> newr = inv_center_row + dr, newc = inv_center_col + dc;</span><br><span class="line">      <span class="keyword">if</span> (newr &lt; <span class="number">0</span> || newr &gt;= ihdr.height * scale || newc &lt; <span class="number">0</span> || newc &gt;= ihdr.width * scale) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (!*get_used(used, i, j, scale) &amp;&amp; !*get_used(used, newr, newc, scale)) &#123;</span><br><span class="line">        *get_used(used, i, j, scale) = <span class="literal">true</span>;</span><br><span class="line">        *get_used(used, newr, newc, scale) = <span class="literal">true</span>;</span><br><span class="line">        <span class="type">unsigned</span> <span class="type">char</span> *new_pixel = get_new_pixel(new_image, newr, newc, scale);</span><br><span class="line">        <span class="type">unsigned</span> <span class="type">char</span> tp[<span class="number">4</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; bytes_per_pixel; ++k) &#123;</span><br><span class="line">          tp[k] = pixel[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; bytes_per_pixel; ++k) &#123;</span><br><span class="line">          pixel[k] = new_pixel[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; bytes_per_pixel; ++k) &#123;</span><br><span class="line">          new_pixel[k] = tp[k];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!*get_used(used, i, j, scale)) &#123;</span><br><span class="line">        pixel[<span class="number">0</span>] = pixel[<span class="number">1</span>] = pixel[<span class="number">2</span>] = pixel[<span class="number">3</span>] = <span class="number">255</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  FILE *out_file = fopen(<span class="string">&quot;output.png&quot;</span>, <span class="string">&quot;wb&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> (out_file == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;Failed to create output file\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Initialize encoder context</span></span><br><span class="line">  spng_ctx *out_ctx = spng_ctx_new(SPNG_CTX_ENCODER);</span><br><span class="line">  <span class="keyword">if</span> (out_ctx == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Failed to create encoder context\n&quot;</span>);</span><br><span class="line">    fclose(out_file);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  spng_set_png_file(out_ctx, out_file);</span><br><span class="line">  new_ihdr.bit_depth = <span class="number">8</span>;</span><br><span class="line">  new_ihdr.color_type = SPNG_COLOR_TYPE_TRUECOLOR_ALPHA;</span><br><span class="line">  new_ihdr.compression_method = <span class="number">0</span>;</span><br><span class="line">  new_ihdr.filter_method = <span class="number">0</span>;</span><br><span class="line">  new_ihdr.interlace_method = <span class="number">0</span>;</span><br><span class="line">  ret = spng_set_ihdr(out_ctx, &amp;new_ihdr);</span><br><span class="line">  <span class="keyword">if</span> (ret != <span class="number">0</span>) &#123;</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;ihdr set failed&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  ret = spng_encode_image(out_ctx, new_image, image_size * scale * scale,</span><br><span class="line">    SPNG_FMT_PNG, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">if</span> (ret != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;spng_encode_image error: %s\n&quot;</span>, spng_strerror(ret));</span><br><span class="line">    ERR_EXIT(<span class="string">&quot;encode error&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  spng_ctx_free(ctx);</span><br><span class="line">  spng_ctx_free(out_ctx);</span><br><span class="line">  fclose(out_file);</span><br><span class="line">  <span class="built_in">free</span>(image);</span><br><span class="line">  <span class="built_in">free</span>(new_image);</span><br><span class="line">  <span class="built_in">free</span>(used);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/misc/incolution/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://mtmatt.page/dataStructure/application-of-link-lists/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1145,103 +1236,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/codeforces-round-847-div-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/ojques/codeforces-round-847-div-3/" class="post-title-link" itemprop="url">Codeforces Round 847 (Div. 3)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2023-01-31 08:00:00" itemprop="dateCreated datePublished" datetime="2023-01-31T08:00:00+08:00">2023-01-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>3.7k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>7 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>重回程式設計第一天…</p>
-<p>因為種種原因停更好久，直到最近，我決定重新開始寫題目。這次的題目選自 <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1790">https://codeforces.com/contest/1790</a> ，剛回來想用 Div3 試個手感，沒想到也卡了許久。</p>
-<h3 id="本文"><a href="#本文" class="headerlink" title="本文"></a>本文</h3><p>言歸正傳，本質上這還是一個分享網站。那我今天用了 3 個小時總共寫出 5 題(共 7 題)。以下是提示、想法、與程式碼的分享。</p>
-<h4 id="pA-Polycarp-and-the-Day-of-Pi"><a href="#pA-Polycarp-and-the-Day-of-Pi" class="headerlink" title="pA Polycarp and the Day of Pi"></a>pA Polycarp and the Day of Pi</h4><p>簡單說就是求前 30 位的圓周率他寫對幾位，比較需要注意的是範例已經給一個完整的圓周率。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a 是輸入</span></span><br><span class="line">string ans=<span class="string">&quot;314159265358979323846264338327&quot;</span>,a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;a;</span><br><span class="line">    <span class="type">int</span> same=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//  逐位判斷</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i</span><br><span class="line"><span class="type">int</span> <span class="built_in">main</span>()&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="pB-Taisia-and-Dice"><a href="#pB-Taisia-and-Dice" class="headerlink" title="pB Taisia and Dice"></a>pB Taisia and Dice</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/ojques/codeforces-round-847-div-3/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1311,7 +1305,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1324,7 +1318,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -1351,7 +1345,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1361,13 +1355,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">190k</span>
+    <span title="總字數">197k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">5:45</span>
+    <span title="所需總閱讀時間">5:59</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
   </div>

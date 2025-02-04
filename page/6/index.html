@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-warm-up-2-counting-valleys/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hacker-rank-warm-up-2-counting-valleys/" class="post-title-link" itemprop="url">HackerRank Warm-up 2.Counting Valleys , in C++</a>
+            <a href="/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/" class="post-title-link" itemprop="url">HackerRank Set And Map 3.Sherlock and Anagrams</a>
         </h2>
 
         <div class="post-meta">
@@ -248,7 +248,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>505</span>
+              <span>670</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -267,12 +267,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：Counting-Valleys-HackerRank"><a href="#題目連結：Counting-Valleys-HackerRank" class="headerlink" title="題目連結：Counting Valleys | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/counting-valleys/">Counting Valleys | HackerRank</a></h3><p>唯一要注意的是山谷的定義</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">countingValleys</span><span class="params">(<span class="type">int</span> steps, string path)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct=<span class="number">0</span>,h=<span class="number">0</span>;</span><br><span class="line">    <span class="type">bool</span> islow=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:path)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="string">&#x27;D&#x27;</span>)&#123;</span><br><span class="line">            h--;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            h++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(h&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!islow)&#123;</span><br><span class="line">                ct++;</span><br><span class="line">                islow=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            islow=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：Sherlock-and-Anagrams-HackerRank"><a href="#題目連結：Sherlock-and-Anagrams-HackerRank" class="headerlink" title="題目連結：Sherlock and Anagrams | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/sherlock-and-anagrams/">Sherlock and Anagrams | HackerRank</a></h3><p>對於每個左右端窮舉即可，不過別做成O(N4logN)就好</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sherlockAndAnagrams</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct=<span class="number">0</span>,len=s.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;len;j++)&#123;</span><br><span class="line">            multiset&lt;<span class="type">char</span>&gt; st,tt;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=j;k++)&#123;</span><br><span class="line">                st.<span class="built_in">insert</span>(s[k]);</span><br><span class="line">                tt.<span class="built_in">insert</span>(s[k]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i+<span class="number">1</span>;k&lt;len-(j-i);k++)&#123;</span><br><span class="line">                tt.<span class="built_in">insert</span>(s[k+(j-i)]);</span><br><span class="line">                <span class="keyword">auto</span> it=tt.<span class="built_in">find</span>(s[k<span class="number">-1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(it!=tt.<span class="built_in">end</span>()) tt.<span class="built_in">erase</span>(it);</span><br><span class="line">                <span class="keyword">if</span>(tt==st) ct++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hacker-rank-warm-up-2-counting-valleys/#more" rel="contents">
+              <a class="btn" href="/ojques/hacker-rank-set-and-map-3-sherlock-and-anagrams/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -363,6 +363,186 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/ojques/hacker-rank-warm-up-1-sales-by-match/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hacker-rank-warm-up-2-counting-valleys/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ojques/hacker-rank-warm-up-2-counting-valleys/" class="post-title-link" itemprop="url">HackerRank Warm-up 2.Counting Valleys , in C++</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>505</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：Counting-Valleys-HackerRank"><a href="#題目連結：Counting-Valleys-HackerRank" class="headerlink" title="題目連結：Counting Valleys | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/counting-valleys/">Counting Valleys | HackerRank</a></h3><p>唯一要注意的是山谷的定義</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">countingValleys</span><span class="params">(<span class="type">int</span> steps, string path)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ct=<span class="number">0</span>,h=<span class="number">0</span>;</span><br><span class="line">    <span class="type">bool</span> islow=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:path)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="string">&#x27;D&#x27;</span>)&#123;</span><br><span class="line">            h--;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            h++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(h&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!islow)&#123;</span><br><span class="line">                ct++;</span><br><span class="line">                islow=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            islow=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ct;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ojques/hacker-rank-warm-up-2-counting-valleys/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hackerrank-set-and-map-5-frequency-queries/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mtmatt">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mtmatt.Page">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/ojques/hackerrank-set-and-map-5-frequency-queries/" class="post-title-link" itemprop="url">HackerRank Set And Map 4.Frequency Queries</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>606</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="題目連結：Frequency-Queries-HackerRank"><a href="#題目連結：Frequency-Queries-HackerRank" class="headerlink" title="題目連結：Frequency Queries | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/frequency-queries/">Frequency Queries | HackerRank</a></h3><p>最後我是用兩個map，一個存數字，另一個存數量變化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">freqQuery</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; q)</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; m,ct;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:q)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]=<span class="built_in">max</span>(ct[m[a[<span class="number">1</span>]]]<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">            m[a[<span class="number">1</span>]]++;</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a[<span class="number">0</span>]==<span class="number">2</span>)&#123;</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]=<span class="built_in">max</span>(ct[m[a[<span class="number">1</span>]]]<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">            m[a[<span class="number">1</span>]]=<span class="built_in">max</span>(m[a[<span class="number">1</span>]]<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(<span class="built_in">bool</span>(ct[a[<span class="number">1</span>]]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ojques/hackerrank-set-and-map-5-frequency-queries/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -566,7 +746,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/ojques/hackerrank-set-and-map-5-frequency-queries/">
+    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-national-106-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -580,7 +760,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/ojques/hackerrank-set-and-map-5-frequency-queries/" class="post-title-link" itemprop="url">HackerRank Set And Map 4.Frequency Queries</a>
+            <a href="/contest/cpp-national-106-1/" class="post-title-link" itemprop="url">C++ 106全國賽 1. 連號或不連號</a>
         </h2>
 
         <div class="post-meta">
@@ -590,7 +770,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-07-13 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-13T08:00:00+08:00">2021-07-13</time>
+              <time title="創建時間：2021-07-05 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T08:00:00+08:00">2021-07-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -598,7 +778,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ojques/" itemprop="url" rel="index"><span itemprop="name">ojques</span></a>
+                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
                 </span>
             </span>
 
@@ -608,7 +788,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>606</span>
+              <span>614</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -627,12 +807,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="題目連結：Frequency-Queries-HackerRank"><a href="#題目連結：Frequency-Queries-HackerRank" class="headerlink" title="題目連結：Frequency Queries | HackerRank"></a>題目連結：<a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/frequency-queries/">Frequency Queries | HackerRank</a></h3><p>最後我是用兩個map，一個存數字，另一個存數量變化</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">freqQuery</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; q)</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; m,ct;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> a:q)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]=<span class="built_in">max</span>(ct[m[a[<span class="number">1</span>]]]<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">            m[a[<span class="number">1</span>]]++;</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(a[<span class="number">0</span>]==<span class="number">2</span>)&#123;</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]=<span class="built_in">max</span>(ct[m[a[<span class="number">1</span>]]]<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">            m[a[<span class="number">1</span>]]=<span class="built_in">max</span>(m[a[<span class="number">1</span>]]<span class="number">-1</span>,<span class="number">0</span>);</span><br><span class="line">            ct[m[a[<span class="number">1</span>]]]++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(<span class="built_in">bool</span>(ct[a[<span class="number">1</span>]]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="題目連結：c299-1-連號或不連號-高中生程式解題系統"><a href="#題目連結：c299-1-連號或不連號-高中生程式解題系統" class="headerlink" title="題目連結：c299. 1. 連號或不連號 - 高中生程式解題系統"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c299">c299. 1. 連號或不連號 - 高中生程式解題系統</a></h3><p>排序後檢查即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="type">int</span> dt[<span class="number">105</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;dt[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(dt,dt+n);</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> ans=<span class="literal">true</span>;</span><br><span class="line">    cout&lt;&lt;dt[<span class="number">0</span>]&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;dt[n<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(dt[i]!=dt[i<span class="number">-1</span>]+<span class="number">1</span>) ans=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot; yes&quot;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot; no&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/ojques/hackerrank-set-and-map-5-frequency-queries/#more" rel="contents">
+              <a class="btn" href="/contest/cpp-national-106-1/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -723,96 +903,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/contest/cpp-national-106-2/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-national-106-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/contest/cpp-national-106-1/" class="post-title-link" itemprop="url">C++ 106全國賽 1. 連號或不連號</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-05 08:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T08:00:00+08:00">2021-07-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>614</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="題目連結：c299-1-連號或不連號-高中生程式解題系統"><a href="#題目連結：c299-1-連號或不連號-高中生程式解題系統" class="headerlink" title="題目連結：c299. 1. 連號或不連號 - 高中生程式解題系統"></a>題目連結：<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c299">c299. 1. 連號或不連號 - 高中生程式解題系統</a></h3><p>排序後檢查即可</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="type">int</span> dt[<span class="number">105</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;dt[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(dt,dt+n);</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> ans=<span class="literal">true</span>;</span><br><span class="line">    cout&lt;&lt;dt[<span class="number">0</span>]&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;dt[n<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(dt[i]!=dt[i<span class="number">-1</span>]+<span class="number">1</span>) ans=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot; yes&quot;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot; no&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/contest/cpp-national-106-1/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -1013,96 +1103,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://mtmatt.page/contest/cpp-taichung-106-7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mtmatt">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mtmatt.Page">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/contest/cpp-taichung-106-7/" class="post-title-link" itemprop="url">C++ 台中區 106-7 雙層骨牌</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-06-20 08:00:00" itemprop="dateCreated datePublished" datetime="2021-06-20T08:00:00+08:00">2021-06-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/contest/" itemprop="url" rel="index"><span itemprop="name">contest</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>765</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="參考資料：動態規劃】-多米諾骨牌-（ssl-1632-luogu-1282）-IT閱讀"><a href="#參考資料：動態規劃】-多米諾骨牌-（ssl-1632-luogu-1282）-IT閱讀" class="headerlink" title="參考資料：動態規劃】 多米諾骨牌 （ssl 1632&#x2F;luogu 1282） - IT閱讀"></a>參考資料：<a target="_blank" rel="noopener" href="https://www.itread01.com/content/1545447844.html">動態規劃】 多米諾骨牌 （ssl 1632&#x2F;luogu 1282） - IT閱讀</a></h4><p>O(q2)以內的解，有點像01背包。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 32000</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> q,d;</span><br><span class="line"><span class="type">short</span> dp[<span class="number">1005</span>][<span class="number">12010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;q;</span><br><span class="line">    <span class="type">int</span> up,dw;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">1050</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="number">12010</span>;j++) dp[i][j]=INF;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> mx=<span class="number">6</span>*q;</span><br><span class="line">    dp[<span class="number">0</span>][mx]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;i++)&#123;</span><br><span class="line">        cin&gt;&gt;up&gt;&gt;dw;</span><br><span class="line">        d=up-dw;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=mx-i*<span class="number">6</span>;j&lt;=mx+i*<span class="number">6</span>;j++)&#123;</span><br><span class="line">            dp[i][j]=<span class="built_in">min</span>(dp[i<span class="number">-1</span>][j-d],dp[i<span class="number">-1</span>][j+d]+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> k=mx;</span><br><span class="line">    <span class="keyword">while</span>(dp[q][k]==INF) k++;</span><br><span class="line">    cout&lt;&lt;dp[q][k]&lt;&lt;<span class="string">&quot;\n&quot;</span>&lt;&lt;k-mx;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/contest/cpp-taichung-106-7/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1172,7 +1172,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1185,7 +1185,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -1212,7 +1212,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1222,13 +1222,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">190k</span>
+    <span title="總字數">197k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">5:45</span>
+    <span title="所需總閱讀時間">5:59</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
   </div>
